@@ -6,6 +6,6 @@
     <title>{{ nb.metadata.name | replace("_", " ") | title }} Analysis</title>  <!-- Dynamic title based on notebook name -->
 </head>
 <body>
-    {{ super() }}  <!-- This will render the rest of the content normally -->
+    {{ body }}  <!-- This will render the rest of the content normally -->
 </body>
 </html>
