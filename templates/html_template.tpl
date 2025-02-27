@@ -1,4 +1,4 @@
-{%- extends 'basic.tpl' -%}
+{%- extends 'notebook.tpl' -%}
 
 {%- block header -%}
 <meta charset="utf-8">
