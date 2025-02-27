@@ -2,3 +2,5 @@
 *.sqlite
 *.DS_Store
 *.ipynb_checkpoints/
+Amazon/*
+H5N1/*
