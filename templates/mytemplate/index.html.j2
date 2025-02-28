@@ -1,11 +1,15 @@
 {% extends 'classic/index.html.j2' %}
 
 {% block head %}
-    <title>{{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook</title>
-    {{ super() }}  {# This includes any default head content from the classic template #}
+    {{ super() }}  {# Ensure other head content from the classic template is included #}
 {% endblock head %}
 
 {% block body %}
 <h1 style="text-align:center; color:#6a0dad;">My Custom Jupyter Notebook</h1>
-{{ super() }}  {# This includes the default content from classic template #}
+{{ super() }}  {# This includes the default content from the classic template #}
+
+<script type="text/javascript">
+    // Dynamically change the title based on the notebook's name
+    document.title = "{{ notebook_name.replace('_', ' ').title() }}";
+</script>
 {% endblock body %}
