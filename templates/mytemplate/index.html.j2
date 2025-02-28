@@ -2,7 +2,7 @@
 
 {% block head %}
     <title>{{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook</title>
-    {{ super() }}  {# This includes the default head content from the classic template #}
+    {{ super() }}  {# This includes any default head content from the classic template #}
 {% endblock head %}
 
 {% block body %}
