@@ -29,26 +29,16 @@
 {% block body %}
 <h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
 
-{# Load metadata.json #}
-{% set metadata_path = "/Users/noahking/data_analysis/metadata.json" %}
-{% set metadata = {} %}
+{# ✅ Use metadata passed from nbconvert #}
+{% set description = resources.metadata.get('description', 'No description available.') %}
+{% set dataset_source = resources.metadata.get('dataset_source', '#') %}
 
-{% if metadata_path|file_exists %}
-    {% set metadata = metadata_path|load_json %}
-{% endif %}
-
-{% set project_key = resources.metadata.name.lower() %}
-
-{% if project_key in metadata %}
-    <p style="text-align:center;"><strong>Description:</strong> {{ metadata[project_key]['description'] }}</p>
-    <p style="text-align:center;"><strong>Dataset Source:</strong> 
-        <a href="{{ metadata[project_key]['dataset_source'] }}" target="_blank">
-            {{ metadata[project_key]['dataset_source'] }}
-        </a>
-    </p>
-{% else %}
-    <p style="text-align:center;"><strong>No metadata available for this project.</strong></p>
-{% endif %}
+<p style="text-align:center;"><strong>Description:</strong> {{ description }}</p>
+<p style="text-align:center;"><strong>Dataset Source:</strong> 
+    <a href="{{ dataset_source }}" target="_blank">
+        {{ dataset_source }}
+    </a>
+</p>
 
 {{ super() }}  {# This includes the default content from the classic template #}
 
