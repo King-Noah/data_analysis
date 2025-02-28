@@ -42,4 +42,19 @@
 {% if project_key in metadata %}
     <p style="text-align:center;"><strong>Description:</strong> {{ metadata[project_key]['description'] }}</p>
     <p style="text-align:center;"><strong>Dataset Source:</strong> 
-      
+        <a href="{{ metadata[project_key]['dataset_source'] }}" target="_blank">
+            {{ metadata[project_key]['dataset_source'] }}
+        </a>
+    </p>
+{% else %}
+    <p style="text-align:center;"><strong>No metadata available for this project.</strong></p>
+{% endif %}
+
+{{ super() }}  {# This includes the default content from the classic template #}
+
+<script type="text/javascript">
+    window.onload = function() {
+        document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
+    };
+</script>
+{% endblock body %}
