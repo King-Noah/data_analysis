@@ -1,3 +1,4 @@
+# custom_html_exporter.py
 from nbconvert.exporters.html import HTMLExporter
 
 class CustomHTMLExporter(HTMLExporter):
