@@ -1,0 +1,14 @@
+{
+    "bitcoin_analysis": {
+        "description": "A historical analysis of Bitcoin prices, covering trends, volatility, and market insights using historical exchange data.",
+        "dataset_source": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data"
+    },
+    "uber_analysis": {
+        "description": "An exploration of Uber pickups in New York City, analyzing patterns based on time, location, and demand fluctuations.",
+        "dataset_source": "https://www.kaggle.com/datasets/fivethirtyeight/uber-pickups-in-new-york-city"
+    },
+    "covid_analysis": {
+        "description": "A detailed study of the COVID-19 pandemic, visualizing case trends, mortality rates, and global impact over time.",
+        "dataset_source": "https://www.kaggle.com/datasets/imdevskp/corona-virus-report"
+    }
+}
