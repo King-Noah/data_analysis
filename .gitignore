@@ -2,10 +2,6 @@
 *.sqlite
 *.DS_Store
 *.ipynb_checkpoints/
-Amazon/*
-H5N1/*
-docs/Amazon
-docs/H5N1
 git_commit.sh
 convert_to_html.sh
 convert_all_html.sh
