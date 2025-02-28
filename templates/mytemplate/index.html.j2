@@ -9,7 +9,7 @@
 {% endblock head %}
 
 {% block body %}
-<h1 style="text-align:center; color:#6a0dad;">My Custom Jupyter Notebook</h1>
+<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
 {{ super() }}  {# This includes the default content from the classic template #}
 {% endblock body %}
 
