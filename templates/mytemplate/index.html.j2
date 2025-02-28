@@ -29,17 +29,6 @@
 {% block body %}
 <h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
 
-{# ✅ Use metadata passed from nbconvert #}
-{% set description = resources.metadata.get('description', 'No description available.') %}
-{% set dataset_source = resources.metadata.get('dataset_source', '#') %}
-
-<p style="text-align:center;"><strong>Description:</strong> {{ description }}</p>
-<p style="text-align:center;"><strong>Dataset Source:</strong> 
-    <a href="{{ dataset_source }}" target="_blank">
-        {{ dataset_source }}
-    </a>
-</p>
-
 {{ super() }}  {# This includes the default content from the classic template #}
 
 <script type="text/javascript">
