@@ -1,11 +1,11 @@
 {% extends 'classic/index.html.j2' %}
 
 {% block head %}
-    <title>{{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook</title>
+    <title>{{ notebook_name.replace('_', ' ').title() }}</title>
     {{ super() }}  {# This includes any default head content from the classic template #}
 {% endblock head %}
 
 {% block body %}
-<h1 style="text-align:center; color:#6a0dad;">My Custom Jupyter Notebook</h1>
+<h1 style="text-align:center; color:#6a0dad;">{{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
 {{ super() }}  {# This includes the default content from classic template #}
 {% endblock body %}
