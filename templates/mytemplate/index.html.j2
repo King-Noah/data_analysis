@@ -1,6 +1,7 @@
+{% set metadata_info = resources.metadata_info if resources.metadata_info is mapping else {} %}
 {% set notebook_path = resources.metadata.get('path', '') %}
 {% set notebook_name = notebook_path.split('/')[-1].replace('.ipynb', '') %}
-{% set metadata = resources.metadata_info.get(notebook_name, {}) %}
+{% set metadata = metadata_info.get(notebook_name, {}) %}
 
 <h1 style="text-align:center; color:#6a0dad;">
     {{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook
