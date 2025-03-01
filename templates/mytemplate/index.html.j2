@@ -27,13 +27,34 @@
 {% endblock head %}
 
 {% block body %}
-<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
+    {% set notebook_name = resources.metadata.get('name', 'unknown_notebook') %}
+    {% set metadata = resources.metadata_info.get(notebook_name, {}) %}
 
-{{ super() }}  {# This includes the default content from the classic template #}
+    <h1 style="text-align:center; color:#6a0dad;">
+        {{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook
+    </h1>
 
-<script type="text/javascript">
-    window.onload = function() {
-        document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
-    };
-</script>
+    {% if metadata %}
+        <p style="text-align:center; font-size:1.2em;">
+            <strong>Description:</strong> {{ metadata.get('description', 'No description available.') }}
+        </p>
+        <p style="text-align:center;">
+            <strong>Dataset Source:</strong> 
+            <a href="{{ metadata.get('dataset_source', '#') }}" target="_blank">
+                {{ metadata.get('dataset_source', 'No dataset source available.') }}
+            </a>
+        </p>
+    {% else %}
+        <p style="text-align:center; font-size:1.2em; color:gray;">
+            No additional metadata found for this notebook.
+        </p>
+    {% endif %}
+
+    {{ super() }}  {# Includes the default content from the classic template #}
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.title = "{{ notebook_name.replace('_', ' ').title() }}";
+        };
+    </script>
 {% endblock body %}
