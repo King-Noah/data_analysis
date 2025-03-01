@@ -1,24 +1,38 @@
-{% set metadata_info = resources.metadata_info if resources.metadata_info is mapping else {} %}
-{% set notebook_path = resources.metadata.get('path', '') %}
-{% set notebook_name = notebook_path.split('/')[-1].replace('.ipynb', '') %}
-{% set metadata = metadata_info.get(notebook_name, {}) %}
+{% extends 'classic/index.html.j2' %}
 
-<h1 style="text-align:center; color:#6a0dad;">
-    {{ notebook_name.replace('_', ' ').title() }} - Jupyter Notebook
-</h1>
+{% block head %}
+    {{ super() }}  {# Ensure other head content from the classic template is included #}
+    
+    <style>
+        /* Remove unnecessary margins and padding */
+        body, .container {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
 
-{% if metadata %}
-    <p style="text-align:center; font-size:1.2em;">
-        <strong>Description:</strong> {{ metadata.get('description', 'No description available.') }}
-    </p>
-    <p style="text-align:center;">
-        <strong>Dataset Source:</strong> 
-        <a href="{{ metadata.get('dataset_source', '#') }}" target="_blank">
-            {{ metadata.get('dataset_source', 'No dataset source available.') }}
-        </a>
-    </p>
-{% else %}
-    <p style="text-align:center; font-size:1.2em; color:gray;">
-        No additional metadata found for this notebook.
-    </p>
-{% endif %}
+        /* Ensure graphs and output cells use full width */
+        .output_png, .output_svg, .output_html {
+            max-width: 100% !important;
+            width: 100% !important;
+            display: block;
+        }
+
+        /* Remove extra margins inside Jupyter cells */
+        div.output_area {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
+{% endblock head %}
+
+{% block body %}
+<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Jupyter Notebook</h1>
+{{ super() }}  {# This includes the default content from the classic template #}
+
+<script type="text/javascript">
+    window.onload = function() {
+        document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
+    };
+</script>
+{% endblock body %}
