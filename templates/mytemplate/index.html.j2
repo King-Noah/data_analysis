@@ -3,27 +3,6 @@
 {% block head %}
     {{ super() }}  {# Ensure other head content from the classic template is included #}
     
-    <style>
-        /* Remove unnecessary margins and padding */
-        body, .container {
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-        }
-
-        /* Ensure graphs and output cells use full width */
-        .output_png, .output_svg, .output_html {
-            max-width: 100% !important;
-            width: 100% !important;
-            display: block;
-        }
-
-        /* Remove extra margins inside Jupyter cells */
-        div.output_area {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-    </style>
 {% endblock head %}
 
 {% block body %}
