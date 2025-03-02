@@ -3,12 +3,31 @@
 {% block head %}
     {{ super() }}  {# Ensure other head content from the classic template is included #}
     
-     <link rel="stylesheet" href="/Users/noahking/data_analysis/docs/styles.css">  {# Link to your custom CSS file #}
+    <style>
+        /* Remove unnecessary margins and padding */
+        body, .container {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
 
+        /* Ensure graphs and output cells use full width */
+        .output_png, .output_svg, .output_html {
+            max-width: 100% !important;
+            width: 100% !important;
+            display: block;
+        }
+
+        /* Remove extra margins inside Jupyter cells */
+        div.output_area {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
 {% endblock head %}
 
 {% block body %}
-<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
+<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }} - Trst</h1>
 {{ super() }}  {# This includes the default content from the classic template #}
 
 <script type="text/javascript">
