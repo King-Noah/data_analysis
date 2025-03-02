@@ -7,18 +7,19 @@
 {% block body %}
 <h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
 
-<p><strong>Dataset Source:</strong> <span id="dataset-source">Loading...</span></p>
-<p><strong>Description:</strong> <span id="dataset-description">Loading...</span></p>
-
 {{ super() }}  {# This includes the default content from the classic template #}
 
 <script type="text/javascript">
+    window.onload = function() {
+        document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
+    };
+
     document.addEventListener("DOMContentLoaded", function () {
         // Get the dataset name from the Jinja variable
         const notebookName = "{{ resources.metadata.name }}";
 
         // Fetch project_info.json
-        fetch("/path/to/project_info.json")  // Update this path
+        fetch("/Users/noahking/data_analysis/project_info.json")  // Update this path
             .then(response => response.json())
             .then(data => {
                 // Get dataset details for the notebook
