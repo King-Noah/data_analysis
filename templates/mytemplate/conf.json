@@ -2,12 +2,6 @@
   "base_template": "classic",
   "mimetypes": {
     "text/html": true
-  },
-  "Exporter": {
-    "extra_template_variables": {
-      "dataset_source": "", 
-      "description": ""
-    }
   }
 }
 
