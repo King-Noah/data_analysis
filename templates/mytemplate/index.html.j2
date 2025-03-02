@@ -1,8 +1,11 @@
 {% extends 'classic/index.html.j2' %}
 
 {% block head %}
+    <h2>Project Information</h2>
+    <p><strong>Dataset Source:</strong> {{ dataset_source }}</p>
+    <p><strong>Description:</strong> {{ description }}</p>
+
     {{ super() }}  {# Ensure other head content from the classic template is included #}
-    
 {% endblock head %}
 
 {% block body %}
