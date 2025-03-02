@@ -13084,9 +13084,8 @@ div#notebook {
     </script>
 <!-- End of mathjax configuration --></head>
 <h1 style="text-align:center; color:#6a0dad;">Hotel Booking Analysis</h1>
-<pre>{"modified_date": "February 25, 2025", "name": "hotel_booking_analysis", "path": "/Users/noahking/data_analysis//Hotel_Booking"}</pre>
-<p><strong>Dataset Source:</strong> </p>
-<p><strong>Description:</strong> </p>
+<p><strong>Dataset Source:</strong> <span id="dataset-source">Loading...</span></p>
+<p><strong>Description:</strong> <span id="dataset-description">Loading...</span></p>
 <body>
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
@@ -13370,8 +13369,31 @@ if (outputEl) {{
 </main>
 </body>
 <script type="text/javascript">
-    window.onload = function() {
-        document.title = "Hotel Booking Analysis";
-    };
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the dataset name from the Jinja variable
+        const notebookName = "hotel_booking_analysis";
+
+        // Fetch project_info.json
+        fetch("/path/to/project_info.json")  // Update this path
+            .then(response => response.json())
+            .then(data => {
+                // Get dataset details for the notebook
+                const datasetInfo = data[notebookName] || {
+                    description: "No description available.",
+                    dataset_source: "N/A"
+                };
+
+                // Update the page content
+                document.getElementById("dataset-source").innerHTML = 
+                    `<a href="${datasetInfo.dataset_source}" target="_blank">${datasetInfo.dataset_source}</a>`;
+                document.getElementById("dataset-description").textContent = datasetInfo.description;
+            })
+            .catch(error => {
+                console.error("Error loading project_info.json:", error);
+            });
+
+        // Update document title
+        document.title = notebookName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    });
 </script>
 </html>
