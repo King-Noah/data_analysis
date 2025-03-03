@@ -13264,16 +13264,20 @@ if (outputEl) {{
         const notebookName = "bitcoin_analysis";
 
         // Fetch project_info.json
-        fetch("../project_info.json")  // Update this path
-            .then(response => response.json())
+        fetch("/path/to/project_info.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                // Get dataset details for the notebook
+                const notebookName = "bitcoin_analysis";
                 const datasetInfo = data[notebookName] || {
                     description: "No description available.",
                     dataset_source: "N/A"
                 };
 
-                // Update the page content
                 document.getElementById("dataset-source").innerHTML = 
                     `<a href="${datasetInfo.dataset_source}" target="_blank">${datasetInfo.dataset_source}</a>`;
                 document.getElementById("dataset-description").textContent = datasetInfo.description;
