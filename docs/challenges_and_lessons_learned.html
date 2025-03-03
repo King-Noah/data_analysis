@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenges and Lessons Learned</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f2f4f8; /* Soft Light Gray */
+            color: #444; /* Dark Gray for readability */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #5A7D7C; /* Muted Teal */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 900px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #5A7D7C;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5F6368; /* Muted Charcoal */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #E8EBEE;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Challenges and Lessons Learned with Jupyter Notebooks and GitHub Pages</h1>
+        <p>Reflecting on the hurdles faced while building and sharing projects using Jupyter Notebooks and GitHub Pages.</p>
+    </header>
+
+    <section>
+        <h2>1. Jupyter Notebook File Size Limitations</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>I had to utilize Git Large File Storage (LFS) for storing large datasets and notebook outputs, which allowed me to work around GitHub's file size restrictions.</li>
+            <li>I also learned to optimize my notebooks by breaking them into smaller chunks and generating outputs selectively, which made the overall file size more manageable.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would automate the process of reducing file sizes using tools like <code>nbconvert</code> to generate lightweight HTML files directly from notebooks before pushing them to the repository.</li>
+            <li>For datasets, I would consider storing them externally and linking to them from the notebook instead of including them directly in the repository.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Rendering Jupyter Notebooks on GitHub Pages</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>I had to rely on tools like <code>nbconvert</code> to convert notebooks into HTML, which required tweaking the templates and ensuring proper styling to match the rest of the website.</li>
+            <li>Managing multiple notebooks with consistent styles and interactivity was a significant effort, requiring me to standardize the templates and ensure the presentation remained uniform.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would build a more robust solution for automating the styling of converted notebooks to ensure uniformity in the presentation without needing to manually edit templates for each project.</li>
+            <li>I’d consider using a more interactive notebook hosting service like Binder or Voila, which would allow me to provide a richer, more dynamic experience for users instead of static HTML.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Integration with GitHub Pages and Jupyter Notebooks</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>I had to structure my repository efficiently, ensuring notebooks, static assets (like images), and HTML files were all in the correct directories for GitHub Pages to serve them properly.</li>
+            <li>I also had to manually handle updates, which was tedious, and required frequently checking the status of notebooks and converting them into HTML format when making changes.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would automate the process of pushing changes to GitHub Pages using GitHub Actions, which would automatically convert the notebook to HTML and push the changes to the live site without manual intervention.</li>
+            <li>I’d also make better use of version control to track changes in the notebooks and ensure that the GitHub Pages site always displays the latest version.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Collaboration and Version Control</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>I learned to separate my code and documentation by using Markdown cells for explanations and focusing on keeping the computational parts clean. This made it easier to manage conflicts.</li>
+            <li>Additionally, I had to encourage best practices for collaborative notebook work, such as ensuring teammates use clear, concise commit messages and avoid making large changes to the notebook's structure.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would encourage more frequent commits and consider breaking down larger notebooks into smaller, modular notebooks to reduce the possibility of conflicts.</li>
+            <li>I’d explore the use of GitHub’s "nbdime" tool, which can help with diffing and merging Jupyter Notebooks in a more Git-friendly manner.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Noah King | <a href="https://github.com/King-Noah" target="_blank">GitHub Profile</a></p>
+    </footer>
+</body>
+</html>
