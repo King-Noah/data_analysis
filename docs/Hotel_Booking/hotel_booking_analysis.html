@@ -13370,36 +13370,5 @@ if (outputEl) {{
     window.onload = function() {
         document.title = "Hotel Booking Analysis";
     };
-
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get the dataset name from the Jinja variable
-        const notebookName = "hotel_booking_analysis";
-
-        // Fetch project_info.json
-        fetch("/project_info.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const notebookName = "hotel_booking_analysis";
-                const datasetInfo = data[notebookName] || {
-                    description: "No description available.",
-                    dataset_source: "N/A"
-                };
-
-                document.getElementById("dataset-source").innerHTML = 
-                    `<a href="${datasetInfo.dataset_source}" target="_blank">${datasetInfo.dataset_source}</a>`;
-                document.getElementById("dataset-description").textContent = datasetInfo.description;
-            })
-            .catch(error => {
-                console.error("Error loading project_info.json:", error);
-            });
-
-        // Update document title
-        document.title = notebookName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-    });
 </script>
 </html>
