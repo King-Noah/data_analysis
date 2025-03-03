@@ -3,69 +3,12 @@
 {% block head %}
     {{ super() }}  {# Ensure other head content from the classic template is included #}
 
-    <style>
-        /* Add a background color to the page */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        /* Center the main heading */
-        h1 {
-            text-align: center;
-            color: #6a0dad;
-            font-size: 2.5em;
-            margin-top: 20px;
-        }
-
-        /* Style the dataset source and description section */
-        .dataset-info {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .dataset-info p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .dataset-info strong {
-            color: #6a0dad;
-        }
-
-        /* Style the dataset source link */
-        #dataset-source a {
-            color: #6a0dad;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        #dataset-source a:hover {
-            text-decoration: underline;
-        }
-
-        /* Additional custom styling for super block content */
-        .super-content {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-        }
-    </style>
+    <!-- Link to the external styles.css file -->
+    <link rel="stylesheet" type="text/css" href="/path/to/styles.css">
 {% endblock head %}
 
 {% block body %}
-    <h1>{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
+    <h1 class="page-title">{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
 
     <div class="dataset-info">
         <p><strong>Description:</strong> <span id="dataset-description">DESCRIPTION_PLACEHOLDER</span></p>
