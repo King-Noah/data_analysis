@@ -5,17 +5,17 @@
 {% endblock head %}
 
 {% block body %}
-    <h1 style="text-align:center; color:#5A7D7C; font-size: 2.5rem; margin-top: 20px;">
+    <h1 style="background-color: #5A7D7C; text-align:center; color:#white; font-size: 2.5rem; margin-top: 20px;">
         {{ resources.metadata.name.replace('_', ' ').title() }}
     </h1>
 
-    <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); margin: 20px auto; max-width: 800px;">
+    <div style="background-color: #5A7D7C; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); margin: 20px auto; max-width: 800px;">
         <p style="font-size: 1.2rem; line-height: 1.6; color: #444;">
-            <strong style="color: #5A7D7C;">Description:</strong>
+            <strong style="color: #white;">Description:</strong>
             <span id="dataset-description">DESCRIPTION_PLACEHOLDER</span>
         </p>
         <p style="font-size: 1.2rem; line-height: 1.6; color: #444;">
-            <strong style="color: #5A7D7C;">Dataset Source:</strong>
+            <strong style="color: #white;">Dataset Source:</strong>
             <span id="dataset-source">DATASET_SOURCE_PLACEHOLDER</span>
         </p>
     </div>
