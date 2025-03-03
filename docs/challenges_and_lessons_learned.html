@@ -12,13 +12,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f2f4f8;
-            color: #444;
+            background-color: #f2f4f8; /* Soft Light Gray */
+            color: #444; /* Dark Gray for readability */
         }
 
         /* Header Styling */
         header {
-            background-color: #5A7D7C;
+            background-color: #5A7D7C; /* Muted Teal */
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -41,7 +41,7 @@
             margin: 20px auto;
             border-radius: 8px;
             max-width: 900px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
         }
 
         section h2 {
@@ -56,7 +56,7 @@
 
         /* Footer */
         footer {
-            background-color: #5F6368;
+            background-color: #5F6368; /* Muted Charcoal */
             color: white;
             text-align: center;
             padding: 15px;
@@ -74,6 +74,7 @@
         footer a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
@@ -86,13 +87,13 @@
         <h2>1. Jupyter Notebook File Size Limitations</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
-            <li>Managing large notebooks required extensive commit history as I made incremental changes to reduce file size and optimize performance.</li>
-            <li>Breaking notebooks into smaller chunks and generating outputs selectively helped keep repository sizes manageable.</li>
+            <li>I had to utilize Git Large File Storage (LFS) for storing large datasets and notebook outputs, which allowed me to work around GitHub's file size restrictions.</li>
+            <li>I also learned to optimize my notebooks by breaking them into smaller chunks and generating outputs selectively, which made the overall file size more manageable.</li>
         </ul>
         <p><strong>What I would do differently:</strong></p>
         <ul>
-            <li>I would automate file size reduction using <code>nbconvert</code> to generate lightweight HTML files before committing.</li>
-            <li>For large datasets, I’d store them externally and reference them instead of including them in the repository.</li>
+            <li>I would automate the process of reducing file sizes using tools like <code>nbconvert</code> to generate lightweight HTML files directly from notebooks before pushing them to the repository.</li>
+            <li>For datasets, I would consider storing them externally and linking to them from the notebook instead of including them directly in the repository.</li>
         </ul>
     </section>
 
@@ -100,13 +101,13 @@
         <h2>2. Rendering Jupyter Notebooks on GitHub Pages</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
-            <li>Converting notebooks to HTML with <code>nbconvert</code> required template customization to maintain consistent styling across projects.</li>
-            <li>Keeping styling and interactivity uniform across multiple notebooks was challenging without a standardized workflow.</li>
+            <li>I had to rely on tools like <code>nbconvert</code> to convert notebooks into HTML, which required tweaking the templates and ensuring proper styling to match the rest of the website.</li>
+            <li>Managing multiple notebooks with consistent styles and interactivity was a significant effort, requiring me to standardize the templates and ensure the presentation remained uniform.</li>
         </ul>
         <p><strong>What I would do differently:</strong></p>
         <ul>
-            <li>I’d develop a more streamlined template system to maintain consistency without excessive manual tweaks.</li>
-            <li>Exploring interactive alternatives like Binder or Voila could offer a more dynamic presentation of notebooks.</li>
+            <li>I would build a more robust solution for automating the styling of converted notebooks to ensure uniformity in the presentation without needing to manually edit templates for each project.</li>
+            <li>I’d consider using a more interactive notebook hosting service like Binder or Voila, which would allow me to provide a richer, more dynamic experience for users instead of static HTML.</li>
         </ul>
     </section>
 
@@ -114,13 +115,13 @@
         <h2>3. Integration with GitHub Pages and Jupyter Notebooks</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
-            <li>Structuring the repository properly ensured that GitHub Pages could correctly serve notebooks and associated assets.</li>
-            <li>Frequent commits were necessary to track changes and manually update HTML versions of the notebooks.</li>
+            <li>I had to structure my repository efficiently, ensuring notebooks, static assets (like images), and HTML files were all in the correct directories for GitHub Pages to serve them properly.</li>
+            <li>I also had to manually handle updates, which was tedious, and required frequently checking the status of notebooks and converting them into HTML format when making changes.</li>
         </ul>
         <p><strong>What I would do differently:</strong></p>
         <ul>
-            <li>Implement GitHub Actions to automate notebook-to-HTML conversion and deployment, reducing manual steps.</li>
-            <li>Leverage version control more effectively to ensure the live GitHub Pages site always reflects the latest changes.</li>
+            <li>I would automate the process of pushing changes to GitHub Pages using GitHub Actions, which would automatically convert the notebook to HTML and push the changes to the live site without manual intervention.</li>
+            <li>I’d also make better use of version control to track changes in the notebooks and ensure that the GitHub Pages site always displays the latest version.</li>
         </ul>
     </section>
 
@@ -128,13 +129,13 @@
         <h2>4. Collaboration and Version Control</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
-            <li>Maintaining clear, structured commit messages was crucial given the large number of incremental changes required.</li>
-            <li>Ensuring computational parts of notebooks were clean while using Markdown for documentation made collaboration easier.</li>
+            <li>I learned to separate my code and documentation by using Markdown cells for explanations and focusing on keeping the computational parts clean. This made it easier to manage conflicts.</li>
+            <li>Additionally, I had to encourage best practices for collaborative notebook work, such as ensuring teammates use clear, concise commit messages and avoid making large changes to the notebook's structure.</li>
         </ul>
         <p><strong>What I would do differently:</strong></p>
         <ul>
-            <li>Encourage more frequent commits to reduce the risk of merge conflicts when working with Jupyter Notebooks.</li>
-            <li>Explore using Git tools like <code>nbdime</code> to better visualize and manage notebook diffs.</li>
+            <li>I would encourage more frequent commits and consider breaking down larger notebooks into smaller, modular notebooks to reduce the possibility of conflicts.</li>
+            <li>I’d explore the use of GitHub’s "nbdime" tool, which can help with diffing and merging Jupyter Notebooks in a more Git-friendly manner.</li>
         </ul>
     </section>
 
@@ -143,4 +144,3 @@
     </footer>
 </body>
 </html>
-
