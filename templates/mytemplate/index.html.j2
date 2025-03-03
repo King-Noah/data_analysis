@@ -19,7 +19,7 @@
         const notebookName = "{{ resources.metadata.name }}";
 
         // Fetch project_info.json
-        fetch("/path/to/project_info.json")
+        fetch("../project_info.json")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
