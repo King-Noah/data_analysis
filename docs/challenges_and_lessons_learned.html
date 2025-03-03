@@ -84,20 +84,7 @@
     </header>
 
     <section>
-        <h2>1. Jupyter Notebook File Size Limitations</h2>
-        <p><strong>What I learned:</strong></p>
-        <ul>
-            <li>I had to optimize my notebooks by breaking them into smaller chunks and generating outputs selectively, which made the overall file size more manageable.</li>
-        </ul>
-        <p><strong>What I would do differently:</strong></p>
-        <ul>
-            <li>I would automate the process of reducing file sizes using tools like <code>nbconvert</code> to generate lightweight HTML files directly from notebooks before pushing them to the repository.</li>
-            <li>For datasets, I would consider storing them externally and linking to them from the notebook instead of including them directly in the repository.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>2. Rendering Jupyter Notebooks on GitHub Pages</h2>
+        <h2>1. Rendering Jupyter Notebooks on GitHub Pages</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>I had to rely on tools like <code>nbconvert</code> to convert notebooks into HTML, which required tweaking the templates and ensuring proper styling to match the rest of the website.</li>
@@ -111,7 +98,7 @@
     </section>
 
     <section>
-        <h2>3. Integration with GitHub Pages and Jupyter Notebooks</h2>
+        <h2>2. Integration with GitHub Pages and Jupyter Notebooks</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>I had to structure my repository efficiently, ensuring notebooks, static assets (like images), and HTML files were all in the correct directories for GitHub Pages to serve them properly.</li>
@@ -125,7 +112,7 @@
     </section>
 
     <section>
-        <h2>4. Lack of Development Environment</h2>
+        <h2>3. Lack of Development Environment</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>Since GitHub Pages does not provide a development environment for Jupyter Notebooks, I had to commit each change to trigger the site updates. This created inefficiencies and added extra steps, as every minor modification in the notebooks required a commit to update the live site.</li>
@@ -133,20 +120,6 @@
         <p><strong>What I would do differently:</strong></p>
         <ul>
             <li>I would explore more flexible hosting solutions that allow live development and provide automatic rendering and previewing of notebooks, like Binder or Voila, to reduce the friction of manual commits for every change.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>5. Collaboration and Version Control</h2>
-        <p><strong>What I learned:</strong></p>
-        <ul>
-            <li>I learned to separate my code and documentation by using Markdown cells for explanations and focusing on keeping the computational parts clean. This made it easier to manage conflicts.</li>
-            <li>Additionally, I had to encourage best practices for collaborative notebook work, such as ensuring teammates use clear, concise commit messages and avoid making large changes to the notebook's structure.</li>
-        </ul>
-        <p><strong>What I would do differently:</strong></p>
-        <ul>
-            <li>I would encourage more frequent commits and consider breaking down larger notebooks into smaller, modular notebooks to reduce the possibility of conflicts.</li>
-            <li>I’d explore the use of GitHub’s "nbdime" tool, which can help with diffing and merging Jupyter Notebooks in a more Git-friendly manner.</li>
         </ul>
     </section>
 
