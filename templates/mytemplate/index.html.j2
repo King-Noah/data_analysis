@@ -5,26 +5,16 @@
 {% endblock head %}
 
 {% block body %}
-    <h1>
-        {{ resources.metadata.name.replace('_', ' ').title() }}
-    </h1>
+<h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
 
-    <div>
-        <p>
-            <strong style="color: #5A7D7C;">Description:</strong>
-            <span id="dataset-description">DESCRIPTION_PLACEHOLDER</span>
-        </p>
-        <p>
-            <strong style="color: #5A7D7C;">Dataset Source:</strong>
-            <span id="dataset-source">DATASET_SOURCE_PLACEHOLDER</span>
-        </p>
-    </div>
+<p><strong>Description:</strong> <span id="dataset-description">DESCRIPTION_PLACEHOLDER</span></p>
+<p><strong>Dataset Source:</strong> <span id="dataset-source">DATASET_SOURCE_PLACEHOLDER</span></p>
 
-    {{ super() }}  {# This includes the default content from the classic template #}
+{{ super() }}  {# This includes the default content from the classic template #}
 
-    <script type="text/javascript">
-        window.onload = function() {
-            document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
-        };
-    </script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.title = "{{ resources.metadata.name.replace('_', ' ').title() }}";
+    };
+</script>
 {% endblock body %}
