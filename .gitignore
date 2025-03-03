@@ -6,4 +6,4 @@ git_commit.sh
 convert_to_html.sh
 convert_all_html.sh
 __pycache__/
-inject_metadata.py
+inject_html.sh
