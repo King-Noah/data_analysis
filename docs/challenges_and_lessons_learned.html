@@ -5,77 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Challenges and Lessons Learned</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f2f4f8; /* Soft Light Gray */
-            color: #444; /* Dark Gray for readability */
-        }
-
-        /* Header Styling */
-        header {
-            background-color: #5A7D7C; /* Muted Teal */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.1rem;
-        }
-
-        /* Section Styling */
-        section {
-            background-color: #ffffff;
-            padding: 30px;
-            margin: 20px auto;
-            border-radius: 8px;
-            max-width: 900px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
-        }
-
-        section h2 {
-            font-size: 2rem;
-            color: #5A7D7C;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #5F6368; /* Muted Charcoal */
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: #E8EBEE;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -84,7 +14,20 @@
     </header>
 
     <section>
-        <h2>1. Rendering Jupyter Notebooks on GitHub Pages</h2>
+        <h2>1. Jupyter Notebook File Size Limitations</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>I had to optimize my notebooks by breaking them into smaller chunks and generating outputs selectively, which made the overall file size more manageable.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would automate the process of reducing file sizes using tools like <code>nbconvert</code> to generate lightweight HTML files directly from notebooks before pushing them to the repository.</li>
+            <li>For datasets, I would consider storing them externally and linking to them from the notebook instead of including them directly in the repository.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Rendering Jupyter Notebooks on GitHub Pages</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>I had to rely on tools like <code>nbconvert</code> to convert notebooks into HTML, which required tweaking the templates and ensuring proper styling to match the rest of the website.</li>
@@ -98,7 +41,7 @@
     </section>
 
     <section>
-        <h2>2. Integration with GitHub Pages and Jupyter Notebooks</h2>
+        <h2>3. Integration with GitHub Pages and Jupyter Notebooks</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>I had to structure my repository efficiently, ensuring notebooks, static assets (like images), and HTML files were all in the correct directories for GitHub Pages to serve them properly.</li>
@@ -112,7 +55,19 @@
     </section>
 
     <section>
-        <h2>3. Collaboration and Version Control</h2>
+        <h2>4. Lack of Development Environment</h2>
+        <p><strong>What I learned:</strong></p>
+        <ul>
+            <li>Since GitHub Pages does not provide a development environment for Jupyter Notebooks, I had to commit each change to trigger the site updates. This created inefficiencies and added extra steps, as every minor modification in the notebooks required a commit to update the live site.</li>
+        </ul>
+        <p><strong>What I would do differently:</strong></p>
+        <ul>
+            <li>I would explore more flexible hosting solutions that allow live development and provide automatic rendering and previewing of notebooks, like Binder or Voila, to reduce the friction of manual commits for every change.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Collaboration and Version Control</h2>
         <p><strong>What I learned:</strong></p>
         <ul>
             <li>I learned to separate my code and documentation by using Markdown cells for explanations and focusing on keeping the computational parts clean. This made it easier to manage conflicts.</li>
