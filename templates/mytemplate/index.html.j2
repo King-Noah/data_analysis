@@ -7,6 +7,9 @@
 {% block body %}
 <h1 style="text-align:center; color:#6a0dad;">{{ resources.metadata.name.replace('_', ' ').title() }}</h1>
 
+<p><strong>Dataset Source:</strong> <span id="dataset-source">DATASET_SOURCE_PLACEHOLDER</span></p>
+<p><strong>Description:</strong> <span id="dataset-description">DESCRIPTION_PLACEHOLDER</span></p>
+
 {{ super() }}  {# This includes the default content from the classic template #}
 
 <script type="text/javascript">
